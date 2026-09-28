@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <h1>Student Management System</h1>
+      </header>
+
+      <main class="container">
+        <section class="panel form-panel">
+          <h2 id="formTitle">Add Student</h2>
+
+          <form id="studentForm" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Enter student name"
+                />
+              </div>
+
+              <div class="field">
+                <label for="age">Age</label>
+                <input
+                  id="age"
+                  name="age"
+                  type="number"
+                  min="1"
+                  max="120"
+                  placeholder="Enter age"
+                />
+              </div>
+
+              <div class="field">
+                <label for="course">Course</label>
+                <input
+                  id="course"
+                  name="course"
+                  type="text"
+                  placeholder="Enter course"
+                />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Enter email"
+                />
+              </div>
+            </div>
+
+            <div class="button-row">
+              <button type="submit" id="submitBtn" class="primary-btn">
+                Add Student
+              </button>
+              <button type="button" id="cancelBtn" class="secondary-btn hidden">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel table-panel">
+          <div class="toolbar">
+            <h2>Students</h2>
+            <div class="search-wrap">
+              <input
+                id="searchInput"
+                type="search"
+                placeholder="Search by name, course, or email"
+              />
+            </div>
+          </div>
+
+          <div
+            id="statusMessage"
+            class="status-message"
+            aria-live="polite"
+          ></div>
+
+          <div id="loadingState" class="loading-state hidden">
+            Loading students...
+          </div>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Course</th>
+                  <th>Email</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="studentTableBody"></tbody>
+            </table>
+          </div>
+
+          <div id="emptyState" class="empty-state hidden">
+            No students found.
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

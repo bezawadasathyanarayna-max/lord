@@ -1,0 +1,12 @@
+{
+  "name": "student-management-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve . -l 3000",
+    "build": "node build-config.js"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
